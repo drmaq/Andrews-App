@@ -1,10 +1,9 @@
 package edu.andrews.cptr475.bernardm.andrewsapp;
 
 import android.content.Intent;
-import android.media.Image;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +13,7 @@ import android.widget.ImageButton;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
-import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
+import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.MainActivityNews;
 import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
 
 /**
@@ -98,7 +97,7 @@ public class MainActivity extends ActionBarActivity {
 
         private void displayrssnews() {
 
-            Intent i = new Intent(getActivity(), CampusNews.class);
+            Intent i = new Intent(getActivity(), MainActivityNews.class);
             getActivity().startActivity(i);
         }
 

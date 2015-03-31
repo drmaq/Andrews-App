@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
 
-    <ListView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listMainView"
-        android:layout_gravity="center_horizontal"
-        android:fastScrollEnabled="false"
-        android:fastScrollStyle="@color/material_blue_grey_800"
-        android:fastScrollAlwaysVisible="false"
-        android:nestedScrollingEnabled="true"
-        android:textFilterEnabled="false"
-        android:scrollingCache="true"
-        android:entries="@color/abc_background_cache_hint_selector_material_dark"
-        android:drawSelectorOnTop="false"
-        android:contentDescription="@string/hello_world"
-        tools:listitem="@android:layout/simple_list_item_2"
-        tools:listfooter="@layout/pubdate" />
+    <ListView android:id="@android:id/list"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
 
-</LinearLayout>
+</RelativeLayout>

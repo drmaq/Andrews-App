@@ -74,10 +74,10 @@ public class Calendar extends Activity {
             // Create a list adapter
             ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.list_content, result);
             // Set list adapter for the ListView
-           // AUAitems.setAdapter(adapter);
+            //AUAitems.setAdapter(adapter);
 
             // Set list view item click listener
-           // AUAitems.setOnItemClickListener(new ListListener(result, local));
+            //AUAitems.setOnItemClickListener(new ListListener(result, local));
         }
     }
 }

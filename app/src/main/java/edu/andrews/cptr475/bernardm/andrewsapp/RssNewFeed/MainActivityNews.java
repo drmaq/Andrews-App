@@ -54,7 +54,7 @@ public class MainActivityNews extends ListActivity {
             dialog = new ProgressDialog(context);
         }
         protected void onPreExecute() {
-            this.dialog.setMessage("Progress start");
+            this.dialog.setMessage("Loading");
             this.dialog.show();
         }
         @Override
@@ -78,18 +78,18 @@ public class MainActivityNews extends ListActivity {
                 NodeList listOfObject = doc.getDocumentElement().getChildNodes();
                 for(int i=0;i<listOfObject.getLength();i++)
                 {
-                    if(listOfObject.item(i).getFirstChild()!=null&&listOfObject.item(i).getNodeName().equals("result"))
+                    if(listOfObject.item(i).getFirstChild()!=null&&listOfObject.item(i).getNodeName().equals("item"))
                     {
                         NodeList listOfResultChild=listOfObject.item(i).getChildNodes();
                         for(int j=0;j<listOfResultChild.getLength();j++)
                         {
-                            if(listOfResultChild.item(j).getFirstChild()!=null&&listOfResultChild.item(j).getNodeName().equals("geometry"))
+                            if(listOfResultChild.item(j).getFirstChild()!=null&&listOfResultChild.item(j).getNodeName().equals("title"))
                             {
                                 Node geometry=listOfResultChild.item(j);
                                 NodeList geometryList=geometry.getChildNodes();
                                 for(int k=0;k<geometryList.getLength();k++)
                                 {
-                                    if(geometryList.item(k).getFirstChild()!=null&&geometryList.item(k).getNodeName().equals("location"))
+                                    if(geometryList.item(k).getFirstChild()!=null&&geometryList.item(k).getNodeName().equals("link"))
                                     {
                                         NodeList locationList=geometryList.item(k).getChildNodes();
                                         for(int l=0;l<locationList.getLength();l++)
