@@ -103,7 +103,7 @@
             android:layout_height="fill_parent"
             android:id="@+id/calendar_button"
             android:background="@null"
-            android:drawableTop="@drawable/calendar_icon"
+            android:drawableTop="@mipmap/calendar_icon"
             android:layout_weight="1"
             android:text="Calendar"/>
 
