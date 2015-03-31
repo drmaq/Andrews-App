@@ -2,6 +2,7 @@ package edu.andrews.cptr475.bernardm.andrewsapp;
 
 import android.content.Intent;
 import android.media.Image;
+import android.provider.ContactsContract;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.Button;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
+import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryListActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
 import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
@@ -75,6 +77,7 @@ public class MainActivity extends ActionBarActivity {
         private Button mselfguidedtour;
         private Button mnewsrss;
         private Button mcalendar;
+        private Button mdirectory;
 
         public PlaceholderFragment() {
         }
@@ -109,6 +112,10 @@ public class MainActivity extends ActionBarActivity {
             getActivity().startActivity(i);
         }
 
+        private void displaydirectory() {
+            Intent i = new Intent(getActivity(), DirectoryListActivity.class);
+            getActivity().startActivity(i);
+        }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -150,6 +157,13 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
 
+            mdirectory = (Button) rootView.findViewById(R.id.directory_button);
+            mdirectory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    displaydirectory();
+                }
+            });
 
             ///code to create a banner for comments
            /* AdView mAdView = (AdView) rootView.findViewById(R.id.adView);

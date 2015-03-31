@@ -110,6 +110,27 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:weightSum="4"
+        android:id="@+id/linearLayout3"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="16dp"
+        android:layout_marginTop="16dp">
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:id="@+id/directory_button"
+        android:background="@null"
+        android:drawableTop="@drawable/directory_icon"
+        android:layout_weight="1"
+        android:text="Directory"/>
+
+    </LinearLayout>
+
     <!-- Implementation for google ads
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
