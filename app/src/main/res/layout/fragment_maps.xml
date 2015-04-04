@@ -13,33 +13,5 @@
                   tools:context=".MapsActivity"
                   android:name="com.google.android.gms.maps.SupportMapFragment"/>
                   -->
-    <FrameLayout
-        android:id="@+id/map_container"
-        android:layout_width="match_parent"
-        android:layout_height="324dp"
-        android:layout_weight="0.54"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal|bottom"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/largetextmed"
-        android:layout_gravity="center_horizontal"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="mainbodymapstxt"
-        android:id="@+id/mainbodymapstxt"
-        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

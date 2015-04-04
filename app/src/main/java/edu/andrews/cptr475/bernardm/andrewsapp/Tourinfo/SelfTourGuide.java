@@ -1,6 +1,8 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -68,10 +70,12 @@ public class SelfTourGuide extends ActionBarActivity {
         }
 
 
-        private void setFlipperImage(int res) {
+        private void setFlipperImage(Bitmap iv) {
             //  Log.i("Set Filpper Called", res+"");
             ImageView image = new ImageView(getActivity().getApplicationContext());
-            image.setBackgroundResource(res);
+            //image.setBackgroundResource(res);
+            image.setImageBitmap(iv);
+            image.setScaleType(ImageView.ScaleType.FIT_XY);
             mviewflipper.addView(image);
         }
 
@@ -94,8 +98,11 @@ public class SelfTourGuide extends ActionBarActivity {
             int gallery_grid_Images[] = {R.drawable.globe, R.drawable.seminary};
             for (int i = 0; i < gallery_grid_Images.length; i++) {
                 //  This will create dynamic image view and add them to ViewFlipper
-                setFlipperImage(gallery_grid_Images[i]);
-                mviewflipper.setInAnimation(container.getContext(), R.anim.infrontleft);
+
+                Bitmap bMap = BitmapFactory.decodeResource(getResources(), gallery_grid_Images[i]);
+                Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, 500, 500, true);
+                setFlipperImage(bMapScaled);
+                mviewflipper.setInAnimation(container.getContext(), R.anim.abc_fade_in);
             }
             maboutus = (Button) rootView.findViewById(R.id.aboutus);
             maboutus.setOnClickListener(new View.OnClickListener() {

@@ -12,9 +12,11 @@
     <string name="title_activity_webviewtours">Webviewtours</string>
     <string name="title_activity_directory">DirectoryListActivity</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-
+    <string name="signin">Read More</string>
+    <string name="cancel">cancel</string>
     <string name="mapText">Map</string>
+    <string name="MeierHall">MeirHall</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

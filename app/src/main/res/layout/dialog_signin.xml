@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:tag="tito"
+              android:layout_height="wrap_content">
+
+    <ImageView
+        android:src="@drawable/aulogo"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="#ff6d6dd2"
+        android:contentDescription="@string/app_name"
+        />
+
+    <TextView
+        android:id="@+id/building"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="Large Text"/>
+
+    <!-- android:inputType="textEmailAddress"
+
+     android:hint="Good Morning" -->/
+
+    <TextView
+        android:id="@+id/infobuilding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="mainbodymapstxt"
+        />
+
+    <!--
+     android:hint="yO 1234"
+     android:inputType="textPassword"
+    -->
+
+
+</LinearLayout>

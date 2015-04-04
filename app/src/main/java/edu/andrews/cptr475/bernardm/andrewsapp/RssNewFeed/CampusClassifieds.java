@@ -45,8 +45,8 @@ public class CampusClassifieds extends Activity {
 
         // Debug the thread name
         Log.d("CampusNews", Thread.currentThread().getName());
-        Log.d("CampusNews2",Thread.currentThread().toString());
-       // Log.d("CampusNews3"),Thread.enumerate(Thread)RssItem.toString();
+        Log.d("CampusNews2", Thread.currentThread().toString());
+        // Log.d("CampusNews3"),Thread.enumerate(Thread)RssItem.toString();
     }
 
     private class GetRSSDataTask extends AsyncTask<String, Void, List<RssItem>> {
@@ -55,7 +55,7 @@ public class CampusClassifieds extends Activity {
 
             // Debug the task thread name
             Log.d("CampusNews", Thread.currentThread().getName());
-            Log.d("CampusNews2",Thread.currentThread().toString());
+            Log.d("CampusNews2", Thread.currentThread().toString());
 
             try {
                 // Create RSS reader
@@ -68,7 +68,7 @@ public class CampusClassifieds extends Activity {
                 Log.e("CampusNews", e.getMessage());
                 Log.e("CampusNews2", e.getLocalizedMessage());
             }
-
+            //titoasads
             return null;
         }
 

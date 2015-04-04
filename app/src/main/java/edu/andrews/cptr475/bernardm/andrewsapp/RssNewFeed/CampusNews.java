@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.R;
@@ -83,6 +84,17 @@ public class CampusNews extends Activity {
 
             // Get a ListView from main view
             ListView AUAitems = (ListView) findViewById(R.id.listMainView);
+
+
+            List<Object> toRemove = new ArrayList<Object>();
+            for (RssItem item : result) {
+                if (item.getTitle().toString().contentEquals("\"")) {
+                    System.out.println(item.getTitle());
+                    // result.remove(item);
+                    toRemove.add(item);
+                }
+            }
+            result.removeAll(toRemove);
 
             // Create a list adapter
             ArrayAdapter<RssItem> adapter = new ArrayAdapter<RssItem>(local, android.R.layout.simple_dropdown_item_1line, result);

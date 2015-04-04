@@ -1,5 +1,7 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
 
+import android.text.Html;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -48,6 +50,8 @@ public class RssParserHandler extends DefaultHandler {
 
     public List<RssItem> getItems() {
         Collections.reverse(rssItems);
+
+
         //Html.fromHtml(rssItems);
        //Html.;
         return rssItems;
@@ -57,13 +61,17 @@ public class RssParserHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if ("item".equals(qName)) {
             currentItem = new RssItem();
-        } else if ("title".equals(qName)) {
+        }
+        if ("title".equals(qName)) {
             parsingTitle = true;
-        } else if ("link".equals(qName)) {
+        }
+        if ("link".equals(qName)) {
             parsingLink = true;
-        } else if ("description".equals(qName)){
+        }
+        if ("description".equals(qName)) {
             parsingDescription = true;
-        } else if ("pubDate".equals(qName)){
+        }
+        if ("pubDate".equals(qName)) {
             parsingPubdate = true;
         }
     }
@@ -71,37 +79,49 @@ public class RssParserHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if ("item".equals(qName)) {
+
             rssItems.add(currentItem);
             currentItem = null;
-        } else if ("title".equals(qName)) {
+        }
+        if ("title".equals(qName)) {
             parsingTitle = false;
-        } else if ("link".equals(qName)) {
+        }
+        if ("link".equals(qName)) {
             parsingLink = false;
-        } else if ("description".equals(qName)){
+        }
+        if ("managingEditor".equals(qName)) {
             parsingDescription = false;
-        } else if ("pubDate".equals(qName)){
+        }
+        if ("pubDate".equals(qName)) {
             parsingPubdate = false;
         }
     }
 
+    // Characters method fills current RssItem object with data when title and link tag content is being processed
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         if (parsingTitle) {
             if (currentItem != null)
                 currentItem.setTitle(new String(ch, start, length));
-        } else if (parsingLink) {
+        }
+        if (parsingLink) {
             if (currentItem != null) {
                 currentItem.setLink(new String(ch, start, length));
                 parsingLink = false;
             }
-        } else if (parsingPubdate) {
+        }
+        if (parsingPubdate) {
             if (currentItem != null) {
                 currentItem.setPubdate(new String(ch, start, length));
                 parsingPubdate = false;
             }
-        } else if (parsingDescription) {
+        }
+        if (parsingDescription) {
             if (currentItem != null) {
-                currentItem.setPubdate(new String(ch, start, length));
+                String value = Html.fromHtml(new String(ch, start, length)).toString();
+                //      if(value."<") {
+                //        currentItem.setDescription(value);
+                //  }
                 parsingDescription = false;
             }
         }
