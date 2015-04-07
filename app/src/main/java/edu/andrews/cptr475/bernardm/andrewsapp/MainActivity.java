@@ -1,17 +1,14 @@
 package edu.andrews.cptr475.bernardm.andrewsapp;
 
 import android.content.Intent;
-import android.media.Image;
-import android.provider.ContactsContract;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.Button;
 
 import edu.andrews.cptr475.bernardm.andrewsapp.CalendaRSS.Calendar;
@@ -19,6 +16,7 @@ import edu.andrews.cptr475.bernardm.andrewsapp.Directory.DirectoryListActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.Map.MapsActivity;
 import edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.CampusNews;
 import edu.andrews.cptr475.bernardm.andrewsapp.Tourinfo.SelfTourGuide;
+import edu.andrews.cptr475.bernardm.andrewsapp.Weather.WeatherActivity;
 
 /**
  * @author Bernardo Martinez
@@ -78,6 +76,7 @@ public class MainActivity extends ActionBarActivity {
         private Button mnewsrss;
         private Button mcalendar;
         private Button mdirectory;
+        private Button mweather;
 
         public PlaceholderFragment() {
         }
@@ -114,6 +113,10 @@ public class MainActivity extends ActionBarActivity {
 
         private void displaydirectory() {
             Intent i = new Intent(getActivity(), DirectoryListActivity.class);
+            getActivity().startActivity(i);
+        }
+        private void displayweather(){
+            Intent i = new Intent(getActivity(), WeatherActivity.class);
             getActivity().startActivity(i);
         }
 
@@ -162,6 +165,14 @@ public class MainActivity extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     displaydirectory();
+                }
+            });
+
+            mweather= (Button) rootView.findViewById(R.id.weather_button);
+            mweather.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    displayweather();
                 }
             });
 

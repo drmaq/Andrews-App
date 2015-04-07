@@ -60,6 +60,8 @@ public class PlaceholderFragment extends Fragment {
             public boolean onMarkerClick(Marker marker) {
                 if (marker.getTitle().equals("MeierHall")) {// if marker equals meier hall
                     Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();
+
+                    //Code to show a custom bar on the left show off.
                     //  TextView frv = (TextView) getFragmentManager().findFragmentById(R.id.container).getView().findViewById(R.id.largetextmed);
                     //   TextView frv2 = (TextView) getFragmentManager().findFragmentById(R.id.container).getView().findViewById(R.id.largetextmed);
                     //   TextView frv = (TextView) layout.findViewById(R.id.building);
@@ -77,7 +79,7 @@ public class PlaceholderFragment extends Fragment {
                             .addToBackStack(null) // enables back key
                             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE) // if you need transition
                             .commit();*/
-                    DialogFragment newFragment = new FireMissilesDialogFragment();
+                    DialogFragment newFragment = new AndrewsBuildingsDialogFragment();
                     Bundle args = new Bundle();
                     args.putString("B", "MeierHall");
                     newFragment.setArguments(args);
@@ -88,57 +90,36 @@ public class PlaceholderFragment extends Fragment {
                 if (marker.getTitle().equals("University_Towers")) {// if marker equals meier hall\
 
                     Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();
-                    DialogFragment newFragment = new FireMissilesDialogFragment();
+                    DialogFragment newFragment = new AndrewsBuildingsDialogFragment();
                     Bundle args = new Bundle();
-                    args.putString("T", "UT");
+                    args.putString("B", "UT");
                     newFragment.setArguments(args);
                     newFragment.show(getFragmentManager(), "tito");
-
-
-                /*    TextView frv3 = (TextView) getFragmentManager().findFragmentById(R.id.container).getView().findViewById(R.id.largetextmed);
-                    TextView frv4 = (TextView) getFragmentManager().findFragmentById(R.id.container).getView().findViewById(R.id.mainbodymapstxt);
-
-                    frv3.setText("University Towers UT");
-                    frv4.setText("University Towers is comprised of Burman Hall, the Andrews University residence " +
-                            "hall for graduate aged men, constructed in 1981, and Damazo Hall, the Andrews University residence hall for graduate aged women, " +
-                            "constructed in 2011. Besides integrated common areas, " +
-                            "they also share a large lobby at the entrance to the facility. There students from both buildings may watch TV, study or visit."); */
                 }
                 return false;
             }
         });
-
 
         mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
             @Override
             public void onCameraChange(CameraPosition cameraPosition) {
 
                 if (mMap.getCameraPosition().zoom <= 15) {
+                    mMap.clear();
                     for (int i = 0; i < 3; i++) {
 
                         mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(arraymapsr[i][1]), Double.parseDouble(arraymapsr[i][2]))).title(arraymapsr[i][0]));
+                        //Manually adding a marker
                         //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.965497, -86.361667)).title("MeierHall"));
-                        //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.966215, -86.363742)).title("University_Towers"));
+
                     }
                 }
                 if (cameraPosition.zoom >= 15) {
+                    // mMap.clear();
                     for (int i = 3; i < 6; i++) {
+
                         mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(arraymapsr[i][1]), Double.parseDouble(arraymapsr[i][2]))).title(arraymapsr[i][0]));
-                        //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.965497, -86.361667)).title("MeierHall")).setVisible(cameraPosition.zoom > 15);
-                        //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.966215, -86.363742)).title("University_Towers")).setVisible(cameraPosition.zoom > 15);
-                    }
-
-
-                }
-        /* TODO implement a way to remove markers */
-                if (cameraPosition.zoom == 14) {
-                    for (int i = 3; i < 6; i++) {
-
-                        mMap.clear();
-
-
-                        // mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(arraymapsr[i][1]), Double.parseDouble(arraymapsr[i][2]))).title(arraymapsr[i][0])).setVisible(false);
-                        //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.965497, -86.361667)).title("MeierHall")).setVisible(cameraPosition.zoom > 15);
+                        //Manually adding a marker tip
                         //  mMap.addMarker(new MarkerOptions().position(new LatLng(41.966215, -86.363742)).title("University_Towers")).setVisible(cameraPosition.zoom > 15);
                     }
 
@@ -147,35 +128,6 @@ public class PlaceholderFragment extends Fragment {
         });
 
     }
-
-    //NoticeDialogListener mListener;
-    //@Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        // Get the layout inflater
-        LayoutInflater inflater = getActivity().getLayoutInflater();
-
-        // Inflate and set the layout for the dialog
-        // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.dialog_signin, null))
-                // Add action buttons
-                .setPositiveButton(R.string.signin, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        // sign in the user ...
-                    }
-                })
-                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                        //Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_SHORT).show();
-                        // PlaceholderFragment;
-                        // mListener.onDialogNegativeClick(NoticeDialogFragment.this);
-                    }
-                }).setMessage("Meier Hall");
-        return builder.create();
-    }
-
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
      * installed) and the map has not already been instantiated.. This will ensure that we only ever
@@ -250,21 +202,20 @@ public class PlaceholderFragment extends Fragment {
 }
 
 @SuppressLint("ValidFragment")
-class FireMissilesDialogFragment extends DialogFragment {
+class AndrewsBuildingsDialogFragment extends DialogFragment {
     // @Override
 
     String Building2;
-    String Building1;
 
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
 
-        Building2 = getArguments().getString("T");
+        //get the building from the arguments bundle
         Building2 = getArguments().getString("B");
 
 
         // String Building="MeierHall";
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
@@ -288,9 +239,9 @@ class FireMissilesDialogFragment extends DialogFragment {
 
         }
 
-        if (Building1 == "UT") {
+        if (Building2 == "UT") {
             frv.setText("University Towers UT");
-            frv.setText("University Towers is comprised of Burman Hall, the Andrews University residence " +
+            frv2.setText("University Towers is comprised of Burman Hall, the Andrews University residence " +
                     "hall for graduate aged men, constructed in 1981, and Damazo Hall, the Andrews University residence hall for graduate aged women, " +
                     "constructed in 2011. Besides integrated common areas, " +
                     "they also share a large lobby at the entrance to the facility. There students from both buildings may watch TV, study or visit.");
@@ -304,6 +255,10 @@ class FireMissilesDialogFragment extends DialogFragment {
                         // sign in the user ...
                         Intent i = new Intent(getActivity(), AboutUs.class);
                         getActivity().startActivity(i);
+                        //    LayoutInflater inflater = getActivity().getLayoutInflater();
+                        //   View textview2 = inflater.inflate(R.layout.buildingdetailinfo, null);
+
+                        // builder.setView(textview2);
                         //fragment transitions check...
                 /*    getFragmentManager()
                             .beginTransaction().add(data,)

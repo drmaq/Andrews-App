@@ -1,5 +1,7 @@
 package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
 
+import org.xml.sax.XMLReader;
+
 import java.util.List;
 
 import javax.xml.parsers.SAXParser;
@@ -34,9 +36,12 @@ public class RssReader {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser saxParser = factory.newSAXParser();
 
+        XMLReader xmlr = saxParser.getXMLReader();
         RssParserHandler handler = new RssParserHandler();
 
-        saxParser.parse(rssUrl, handler);
+
+        // xmlr.
+        // saxParser.parse(rssUrl, handler);
 
         return handler.getItems();
 

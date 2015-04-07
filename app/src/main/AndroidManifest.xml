@@ -1,68 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="edu.andrews.cptr475.bernardm.andrewsapp">
+    package="edu.andrews.cptr475.bernardm.andrewsapp" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/new_au_logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBW3I6PuPCXESMeQNXdd1uEsVMEqI_mmdc"/>
+            android:value="AIzaSyBW3I6PuPCXESMeQNXdd1uEsVMEqI_mmdc" />
 
-        <!--Include the AdActivity configChanges and theme. -->
+        <!-- Include the AdActivity configChanges and theme. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent"/>
+            android:theme="@android:style/Theme.Translucent" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Map.MapsActivity"
-            android:label="@string/title_activity_maps">
+            android:label="@string/title_activity_maps" >
         </activity>
         <activity
             android:name=".Tourinfo.SelfTourGuide"
-            android:label="@string/title_activity_selftour_guide">
+            android:label="@string/title_activity_selftour_guide" >
         </activity>
         <activity
             android:name=".Tourinfo.AboutUs"
-            android:label="@string/title_activity_aboutus">
+            android:label="@string/title_activity_aboutus" >
         </activity>
         <activity
             android:name=".Tourinfo.WebviewToursActivity"
-            android:label="@string/title_activity_webviewtours">
+            android:label="@string/title_activity_webviewtours" >
         </activity>
         <activity
             android:name=".Directory.DirectoryListActivity"
-            android:label="@string/title_activity_directory">
+            android:label="@string/title_activity_directory" >
         </activity>
         <activity
             android:name=".RssNewFeed.CampusNews"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
         </activity>
-        <activity android:name=".CalendaRSS.Calendar"
-            android:label="Calendar">
-
-            </activity>
+        <activity
+            android:name=".CalendaRSS.Calendar"
+            android:label="Calendar" >
+        </activity>
+        <activity
+            android:name=".Weather.WeatherActivity"
+            android:label="@string/title_activity_weather" >
+        </activity>
     </application>
 
 </manifest>
