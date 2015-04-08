@@ -1,9 +1,46 @@
 <resources>
 
+    <!-- Older versions of Android don't allow for use with Material theme. I'll figure out this
+         problem later after I get ONE of these two to work -->
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
 
+        <!-- Main theme colors -->
+
+
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/au_blue</item>
+        <!-- theme text color for app bar -->
+        <item name="android:actionMenuTextColor">@color/au_white</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/au_blue_dark</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/au_gold</item>
+
+        <!-- theme background color -->
+        <item name="android:windowBackground">@color/au_white</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:actionBarWidgetTheme">@style/ActionBarWidget</item>
+
+        <!-- theme  -->
+    </style>
+
+    <!-- Actionbar Theme -->
+    <style name="ActionBar" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="background">@color/au_blue</item>
+        <item name="logo">@drawable/au_icon</item>
+        <item name="displayOptions">useLogo|showHome</item>
+    </style>
+
+    <style name="ActionBarWidget" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    </style>
+
+    <style name="AutoCompleteTextView" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textCursorDrawable">@null</item>
     </style>
 
 </resources>

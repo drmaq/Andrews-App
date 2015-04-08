@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- These colors are AU Brand colors or current alternates from IMC -->
-    <color name="au_blue">#000336</color>
-    <color name="au_blue_alt">#004a80</color>
+    <color name="au_blue">#003366</color>
+    <color name="au_blue_dark">#000336</color>
     <color name="au_light_blue">#0067ac</color>
     <color name="au_gold">#cc9900</color>
     <color name="au_gold_alt">#cbb677</color>

@@ -8,8 +8,7 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context=".MainActivity$PlaceholderFragment"
-                android:background="#fff7f9fd">
+                tools:context=".MainActivity$PlaceholderFragment" >
 
     <!-- Vertical layout is 4 icons across vs 5 in horizontal-->
     <LinearLayout
