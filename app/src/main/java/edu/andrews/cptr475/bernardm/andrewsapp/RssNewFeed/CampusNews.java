@@ -48,7 +48,11 @@ public class CampusNews extends Activity {
         GetRSSDataTask task = new GetRSSDataTask();
 
         // Start download RSS task
+<<<<<<< HEAD
         task.execute("https://www.andrews.edu/agenda/Campus+News/limit/10/rss");
+=======
+        task.execute("https://www.andrews.edu/agenda/category/Campus+News/limit/15/rss");
+>>>>>>> 2a48b7d9caafc2329864e246f28aafb9a71e7110
 
         // Debug the thread name
         Log.d("CampusNews", Thread.currentThread().getName());
