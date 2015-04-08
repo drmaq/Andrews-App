@@ -41,7 +41,7 @@ public class RssReader {
 
 
         // xmlr.
-        // saxParser.parse(rssUrl, handler);
+        saxParser.parse(rssUrl, handler);
 
         return handler.getItems();
 
