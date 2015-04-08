@@ -1,4 +1,4 @@
-package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed;
+package edu.andrews.cptr475.bernardm.andrewsapp.RssNewFeed.TESTING;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
