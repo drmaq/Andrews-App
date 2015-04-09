@@ -9,7 +9,7 @@ public class StoreItem {
     public String getDescription() {
         return mDescription;
     }
-    pubtitlec void setDescription(String description) {
+    public void setDescription(String description) {
         mDescription = description;
     }
     /** Get and Set XML Items*/
