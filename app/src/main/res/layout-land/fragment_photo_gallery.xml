@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/NewsView"
+        android:layout_gravity="center_horizontal"
+        android:fastScrollEnabled="false"
+        android:fastScrollStyle="@color/material_blue_grey_800"
+        android:fastScrollAlwaysVisible="false"
+        android:nestedScrollingEnabled="true"
+        android:textFilterEnabled="false"
+        android:scrollingCache="true"
+        android:entries="@color/abc_background_cache_hint_selector_material_dark"
+        android:drawSelectorOnTop="false"
+        android:contentDescription="@string/hello_world"
+        tools:listitem="@android:layout/simple_list_item_2"
+        tools:listfooter="@layout/pubdate" />
+
+</LinearLayout>
