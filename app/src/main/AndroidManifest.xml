@@ -13,6 +13,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/new_au_logo"
+        android:logo="@drawable/au_icon"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppTheme" >
         <meta-data
@@ -29,7 +30,8 @@
             android:theme="@android:style/Theme.Translucent" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:logo="@drawable/au_icon">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

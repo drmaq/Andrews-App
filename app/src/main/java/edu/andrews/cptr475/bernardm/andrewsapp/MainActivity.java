@@ -35,9 +35,13 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Actionbar stuff
+        // Actionbar -> trying to get logo to show
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setLogo(R.drawable.au_logo);
+        actionBar.setTitle("");
         actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
